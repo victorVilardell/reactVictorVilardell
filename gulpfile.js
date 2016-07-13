@@ -1,11 +1,11 @@
 var gulp = require('gulp')
 var webserver = require('gulp-webserver')
-var stylus = require('gulp-stylus')
 var browserify = require('browserify')
 var babelify = require('babelify')
 var source = require('vinyl-source-stream')
-var nib = require('nib')
 var minify = require('gulp-minify-css')
+var sass = require('gulp-sass')
+var concat = require('gulp-concat')
 
 gulp.task('server', function() {
   gulp.src('./build')
@@ -17,12 +17,10 @@ gulp.task('server', function() {
     }))
 })
 
-gulp.task('stylus', function() {
-  gulp.src('./src/styles/style.styl')
-    .pipe(stylus({
-      use: nib(),
-      'include css': true,
-    }))
+gulp.task('sass', function () {
+  return gulp.src('./src/**/*.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(concat('style.css'))
     .pipe(minify())
     .pipe(gulp.dest('./build/css/'))
 })
@@ -41,7 +39,7 @@ gulp.task('build', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/components/**/*.jsx', ['build'])
-  gulp.watch(['./src/styles/**/*.styl', './src/components/**/*.styl'], ['stylus'])
+  gulp.watch('./src/**/*.scss', ['sass'])
 })
 
 gulp.task('default', ['server', 'watch'])

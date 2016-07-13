@@ -14,13 +14,13 @@ export default class ElemRow extends React.Component {
 
         <div className="media-body">
 
-          <ElemPhoto picture={this.props.image} />
+          <ElemPhoto image={this.props.image} />
 
-          <div>
+        <div>
 
             {this.props.surface} {this.props.rooms} &nbsp;
             {this.props.description}
-            
+
           </div>
 
         </div>

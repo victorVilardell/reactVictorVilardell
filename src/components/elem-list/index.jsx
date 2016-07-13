@@ -8,14 +8,17 @@ export default class ElemList extends React.Component {
       <section className="media-list">
         {
           this.props.listado.map((properties) => {
-            return <ElemRow key={ properties.id }
-                                image={ properties.image }
-                                title={ properties.title }
-                                rooms= { properties.rooms }
-                                surface= { properties.surface }
-                                price=  { properties.price }
-                                description= { properties.description }  />
-                                }
+
+            if(properties.title.search(this.props.inputValue) > -1) {
+              return <ElemRow key={ properties.id }
+                              image={ properties.image }
+                              title={ properties.title }
+                              rooms= { properties.rooms }
+                              surface= { properties.surface }
+                              price=  { properties.price }
+                              description= { properties.description }  />
+            }
+
           })
         }
       </section>
