@@ -16,10 +16,12 @@ export default class ElemRow extends React.Component {
 
           <ElemPhoto image={this.props.image} />
 
-        <div>
+          <div className="media-info">
 
-            {this.props.surface} {this.props.rooms} &nbsp;
-            {this.props.description}
+              <p className="relevant-info"> <span>{this.props.surface}</span> <span>{this.props.rooms}</span></p>
+              <p className="description">
+                {this.props.description}
+              </p>
 
           </div>
 

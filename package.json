@@ -1,14 +1,14 @@
 {
-  "name": "react-fetch",
+  "name": "react-List",
   "version": "1.0.0",
-  "description": "An example app in ReactJS, to educational purposes",
+  "description": "An example app in ReactJS",
   "main": "index.js",
   "scripts": {
     "test": "standard && node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/carlosazaustre/n6ws"
+    "url": "https://github.com/victorVilardell"
   },
   "keywords": [
     "es6",
@@ -16,12 +16,8 @@
     "javascript",
     "react"
   ],
-  "author": "Carlos Azaustre @carlosazaustre",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/carlosazaustre/react-fetch"
-  },
-  "homepage": "https://github.com/carlosazaustre/react-fetch",
+  "author": "Victor Vilardell",
+  "homepage": "https://github.com/victorVilardell/reactVictorVilardell",
   "devDependencies": {
     "babelify": "^6.4.0",
     "browserify": "^10.2.4",

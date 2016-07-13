@@ -1,3 +1,49 @@
-.xx {
-	content:" "
+.media {
+	flex: 0 1 auto;
+	align-self: flex-start;
+	width: 70%;
+	margin: 0 0 1.1rem 0;
+	padding: 0.9rem;
+
+	header {
+		width: 100%;
+		float: left;
+		margin: 0 0 0.8em 0;
+
+		h3 {
+			float: left;
+			font-size: 22px;
+
+		}
+
+		p {
+			float: right;
+			font-size: 26px;
+
+			&:after {
+				content: "€";
+				
+			}
+		}
 	}
+
+	.media-body {
+		width: 100%;
+		
+		.media-info {
+			width: 60%;
+
+			.relevant-info {
+				font-size: 18px;
+				font-weight: bold;
+
+				span:first-child:after {
+					content: "|";
+					margin: 0 0.3rem;
+				}
+			}
+
+		}
+
+	}
+}
