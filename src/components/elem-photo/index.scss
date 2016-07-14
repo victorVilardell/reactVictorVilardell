@@ -1,5 +1,12 @@
 figure {
+	margin: 0;
 	display: inline-block;
 	width:40%;
-	margin: 0 0.8rem 0 0;
+	vertical-align:top;
+
+	img {
+		padding: 0 0.8rem 0 0;
+		width:100%;
+	}
+
 }
