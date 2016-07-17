@@ -18,7 +18,10 @@ export default class ElemRow extends React.Component {
 
           <div className="media-info">
 
-              <p className="relevant-info"> <span>{this.props.surface}</span> <span>{this.props.rooms}</span></p>
+              <p className="relevant-info">
+                <span className="meters">{this.props.surface} m<sup>2</sup></span>
+                {this.props.rooms} hab.
+                </p>
               <p className="description">
                 {this.props.description}
               </p>

@@ -1,9 +1,9 @@
 .media {
 	flex: 0 1 auto;
 	align-self: flex-start;
-	width: 70%;
 	margin: 0 0 1.1rem 0;
 	padding: 0.9rem;
+	width:100%;
 
 	header {
 		width: 100%;
@@ -29,15 +29,18 @@
 
 	.media-body {
 		width: 100%;
+		float: left;
 		
 		.media-info {
 			width: 60%;
+			display: inline-block;
 
 			.relevant-info {
 				font-size: 18px;
 				font-weight: bold;
+				margin-top: 0;
 
-				span:first-child:after {
+				.meters::after {
 					content: "|";
 					margin: 0 0.3rem;
 				}
