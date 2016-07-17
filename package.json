@@ -17,6 +17,10 @@
     "react"
   ],
   "author": "Victor Vilardell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorVilardell/reactVictorVilardell"
+  },
   "homepage": "https://github.com/victorVilardell/reactVictorVilardell",
   "devDependencies": {
     "babelify": "^6.4.0",
