@@ -6,6 +6,7 @@ var source = require('vinyl-source-stream')
 var minify = require('gulp-minify-css')
 var sass = require('gulp-sass')
 var concat = require('gulp-concat')
+var fontAwesome = require('node-font-awesome')
 
 gulp.task('server', function() {
   gulp.src('./build')
@@ -17,12 +18,22 @@ gulp.task('server', function() {
     }))
 })
 
+gulp.task('fonts', function() {
+  gulp.src(fontAwesome.fonts)
+    .pipe(gulp.dest('./build/fonts'));
+return gulp.src('./src/lib/fontAwesome/*.scss')
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(concat('fontAwesome.css'))
+	.pipe(minify())
+	.pipe(gulp.dest('./build/css/'))
+})
+
 gulp.task('sass', function () {
-  return gulp.src('./src/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(concat('style.css'))
-    .pipe(minify())
-    .pipe(gulp.dest('./build/css/'))
+  return gulp.src('./src/components/**/*.scss')
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(concat('style.css'))
+	.pipe(minify())
+	.pipe(gulp.dest('./build/css/'))
 })
 
 gulp.task('build', function() {
@@ -42,4 +53,4 @@ gulp.task('watch', function() {
   gulp.watch('./src/**/*.scss', ['sass'])
 })
 
-gulp.task('default', ['server', 'watch'])
+gulp.task('default', ['fonts', 'server', 'watch'])

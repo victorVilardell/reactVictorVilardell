@@ -1,0 +1,23 @@
+.Search {
+	text-align:center;
+
+	.iconSearch {
+		position: relative;
+		display: inline-block;
+
+		input {
+			padding: 0.1875rem 0.3125rem;
+			color:#999999;
+		}
+
+		&:after {
+			content: '\f002';
+			font-family: FontAwesome;
+			display: inline-block;
+			position: absolute;
+			right: 0.3125rem;
+			top: 0.3125rem;
+		}
+
+	}
+}
