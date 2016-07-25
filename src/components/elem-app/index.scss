@@ -426,3 +426,20 @@ td,
 th {
   padding: 0;
 }
+
+
+/* Loader
+	========================================================================== */
+
+.loader {
+	text-align:center;
+
+	i {
+		display: inline-block;
+	}
+
+	span {
+		display: block;
+	}
+
+}
