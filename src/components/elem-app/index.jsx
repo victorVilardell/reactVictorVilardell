@@ -1,7 +1,9 @@
 import React from 'react'  
+import _ from 'lodash'
 import ElemList from '../elem-list'
 import ElemSearch from '../elem-search'
 import ElemFilter from '../elem-filter'
+
 
 export default class ElemApp extends React.Component {
 
@@ -20,35 +22,17 @@ export default class ElemApp extends React.Component {
       })
   }
 
-   searchBy(input) {
-      this.setState({ inputValue : input.target.value })
-   }
+  searchBy(input) {
+    this.setState({ inputValue : input.target.value })
+  }
 
-    orderList() {
+  filterBy(select) {
 
-      this.state.valueSelect
+    this.setState({
+      properties: _.sortBy(this.state.properties, select.currentTarget.value)
+    })
 
-      let listJSON = this.state.properties
-
-      listJSON.sort(function (a, b) {
-        if (a.price > b.price) {
-          return 1;
-        }
-        if (a.price < b.price) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      })
-
-      console.log(listJSON)
-
-   }
-
-   filterBy(select) {
-      this.setState({ valueSelect : select.currentTarget.value})
-      this.orderList()
-   }
+  }
 
   render() {
     if (this.state.properties.length > 0) {

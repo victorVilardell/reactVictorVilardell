@@ -3,6 +3,24 @@ import ElemPhoto from '../elem-photo'
 
 export default class ElemRow extends React.Component {
 
+  elipseMore() {
+
+    let numShow = 100
+    let ellipsetext = '...'
+    let textShow = 'show more'
+    let textnoShow = 'show less'
+
+    console.log("hola")
+
+
+  }
+
+  componentDidMount(){
+
+    this.elepseMore
+
+  }
+
   render() {
     return(
       <article className="media">
@@ -20,8 +38,8 @@ export default class ElemRow extends React.Component {
 
               <p className="relevant-info">
                 <span className="meters">{this.props.surface} m<sup>2</sup></span>
-                {this.props.rooms} hab.
-                </p>
+                {this.props.rooms || 0} hab.
+              </p>
               <p className="description">
                 {this.props.description}
               </p>
