@@ -1,4 +1,4 @@
-import React from 'react'  
+import React from 'react'
 import _ from 'lodash'
 import ElemList from '../elem-list'
 import ElemSearch from '../elem-search'
@@ -27,11 +27,9 @@ export default class ElemApp extends React.Component {
   }
 
   filterBy(select) {
-
     this.setState({
-      properties: _.sortBy(this.state.properties, select.currentTarget.value)
+      properties: select.currentTarget.value == 'priceDown' ? this.state.properties.sort(function(a, b){return b.price-a.price}) : _.sortBy(this.state.properties, select.currentTarget.value)
     })
-
   }
 
   render() {
@@ -53,7 +51,7 @@ export default class ElemApp extends React.Component {
 
       return <p className="loader">
       <i className="fa fa-cog fa-spin fa-3x fa-fw"></i>
-      <span class="sr-only">Loading...</span> 
+      <span class="sr-only">Loading...</span>
       </p>
 
     }

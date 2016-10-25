@@ -9,10 +9,10 @@ export default class ElemFilter extends React.Component {
 
 	 componentWillMount() {
 
-		return this.setState({ 
+		return this.setState({
 			optionsfilter: [
 					{value:'default', text:'default'},
-					{value:'price', text:'Precio ascendente'},
+					{value:'priceDown', text:'Precio ascendente'},
 					{value:'price', text:'Precio descendente'},
 					{value:'rooms', text:'Nº Rooms'},
 				]
